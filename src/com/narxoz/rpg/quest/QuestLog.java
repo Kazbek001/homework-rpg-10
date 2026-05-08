@@ -36,6 +36,10 @@ public class QuestLog {
         return new PriorityQuestIterator(this, threshold);
     }
 
+    public QuestIterator rewardSorted() {
+        return new RewardSortedQuestIterator(this);
+    }
+
     List<Quest> snapshot() {
         return Collections.unmodifiableList(new ArrayList<>(quests));
     }
